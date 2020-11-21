@@ -1,0 +1,81 @@
+/*
+    1. create table list to show books
+    2. create button to add book
+    3. create form to fill book info
+        - form appear only when button to add book clicked
+*/
+
+body{
+
+}
+
+h1, p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#grid-wrapper{
+    display: grid;
+    margin: auto;
+}
+
+.grid-above{
+    display: block;
+    width: auto;
+    height: 350px;
+    border-bottom: 3px solid salmon;
+}
+
+.grid-below{
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+}
+
+.above-1{
+    margin: auto;
+    width: 50%;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.below-1{
+    margin: auto;
+    width: 80%;
+}
+
+.form{
+    background-color: burlywood;
+    text-align: left;
+    position: relative;
+    border: 1px solid black;
+    width: 300px;
+    height: 220px;
+    left: -30px;
+    margin: -100px auto;
+    padding: 20px;
+}
+
+.hid{
+    display: none;
+}
+
+#book_list{
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    text-align: justify;
+    /* border: 1px solid black; */
+    border-spacing: 0px;
+}
+th, td{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid black;
+}
+.tb_head{
+    text-align: center;
+    /* background-color: rgb(240, 236, 236); */
+    border-bottom: 1px solid black;
+}

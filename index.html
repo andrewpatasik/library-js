@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>My Library</title>
+</head>
+<body>
+    <div id="grid-wrapper">
+        <div class="grid-above">
+            <div class="above-1">
+                <button id="add_btn">Add Book</button> 
+                <form class="form hid">
+                    <label for="title">Title</label><br>
+                    <input type="text" id="input_title" name="title">
+                    <br>
+                    <label for="author">Author</label><br>
+                    <input type="text" id="input_author">
+                    <br>
+                    <label for="pages">Pages</label><br>
+                    <input type="text" id="input_pages">
+                    <br>
+                    <br>
+                    <label for="read">have been read? </label>
+                    <br>
+                    <label for="true">Yes</label>
+                    <input type="radio" name="read" id="read_true" value="true" checked="checked">
+                    <label for="false">No</label>
+                    <input type="radio" name="read" id="read_false" value="false">
+                    <br>
+                    <br>
+                    <input id="sub" type="button" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="grid-below">
+            <div class="below-1">
+                <table id="book_list">
+                    <tr id="table_head">
+                        <th class="tb_head">Title</th>
+                        <th class="tb_head">Author</th>
+                        <th class="tb_head">Pages</th>
+                        <th class="tb_head">Read</th>
+                        <th class="tb_head">Action</th>
+                    </tr>
+                </table>    
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
+
+<!--  
+    1. create table list to show books
+    2. create button to add book
+    3. create form to fill book info
+        - form appear only when button to add book clicked
+-->
