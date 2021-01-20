@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>My Library</title>
 </head>
+
 <body>
     <div id="grid-wrapper">
-        <div class="grid-above">
+        <div class="grid-above flex">
             <div class="above-1">
-                <button id="add_btn">Add Book</button> 
+                <button id="add_btn" class="card-button" ><p>ADD BOOK</p></button>
                 <form class="form hid">
-                    <label for="title">Title</label><br>
-                    <input type="text" id="input_title" name="title">
+                    <span id="details">Book Details</span>
                     <br>
-                    <label for="author">Author</label><br>
-                    <input type="text" id="input_author">
+                    <input type="text" id="input_title" name="title" placeholder="Title">
+                    <br>                    
+                    <input type="text" id="input_author" placeholder="Author">
+                    <br>                    
+                    <input type="text" id="input_pages" placeholder="Pages">
+                    <br>                    
+                    <label for="read">read status </label>
                     <br>
-                    <label for="pages">Pages</label><br>
-                    <input type="text" id="input_pages">
-                    <br>
-                    <br>
-                    <label for="read">have been read? </label>
-                    <br>
-                    <label for="true">Yes</label>
+                    <label for="true">read</label>
                     <input type="radio" name="read" id="read_true" value="true" checked="checked">
-                    <label for="false">No</label>
+                    <label for="false">not yet</label>
                     <input type="radio" name="read" id="read_false" value="false">
                     <br>
-                    <br>
-                    <input id="sub" type="button" value="Submit">
+                    <br>                
+                    <input id="sub" class="card-button" type="button" value="SUBMIT">
                 </form>
             </div>
         </div>
@@ -44,12 +44,13 @@
                         <th class="tb_head">Read</th>
                         <th class="tb_head">Action</th>
                     </tr>
-                </table>    
+                </table>
             </div>
         </div>
     </div>
     <script src="./main.js"></script>
 </body>
+
 </html>
 
 <!--  

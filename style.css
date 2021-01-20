@@ -5,38 +5,91 @@
         - form appear only when button to add book clicked
 */
 
-body{
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&display=swap');
 
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #f3d2c1;
+    --secondary-color: #8bd3dd;
+    --headline-color: #001858;
+    --paragraph-color: #172c66;
+    --button-color: #f582ae;
+    --stroke-color: #001858;
+}
+
+body{
+    position: relative;
+    height: 100%;
+    font-family: 'Fira Sans', sans-serif;
+    /* background-color: #001858; */
 }
 
 h1, p{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 #grid-wrapper{
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     margin: auto;
+    gap: 10px;
 }
 
 .grid-above{
     display: block;
-    width: auto;
+    margin: 20px auto;
+    width: 1100px;
     height: 350px;
-    border-bottom: 3px solid salmon;
+    background-color: var(--main-color);
+    border: 3px solid var(--stroke-color);
+    border-radius: 3px;
+}
+
+#add_btn {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#add_btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 1px #001858;
+}
+.card-button {
+    width: 300px;
+    height: 90px;
+    border-style: none;
+    background-color: var(--button-color);
+    color: var(--paragraph-color);
+    outline: none;
+    font-size: 12px;
+    border-radius: 3px;
 }
 
 .grid-below{
     display: block;
-    width: auto;
-    height: auto;
-    margin-top: 20px;
-    /* border: 1px solid black; */
+    width: 1200px;
+    height: 320px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    border: 3px solid var(--stroke-color);
+    border-radius: 3px;
 }
 
 .above-1{
+    position: relative;
     margin: auto;
     width: 50%;
-    padding-top: 100px;
     text-align: center;
+    /* border: 1px solid black; */
 }
 
 .below-1{
@@ -45,15 +98,38 @@ h1, p{
 }
 
 .form{
-    background-color: burlywood;
     text-align: left;
-    position: relative;
-    border: 1px solid black;
-    width: 300px;
-    height: 220px;
-    left: -30px;
-    margin: -100px auto;
+    position: absolute;
+    /* margin: auto; */
+    top: -100px;
+    left: 0;
+    right: 0;
     padding: 20px;
+    border: 1px solid black;
+    background-color: var(--secondary-color);
+}
+
+.form input {
+    width: 390px;
+    height: 30px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.form input:nth-child(3) {
+    margin-top: 15px;
+}
+
+#details {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+#read_true,
+#read_false {
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
 }
 
 .hid{
@@ -70,12 +146,33 @@ h1, p{
     border-spacing: 0px;
 }
 th, td{
+    width: 300px;
+    height: 30px;
     padding-left: 10px;
     padding-right: 10px;
     border-bottom: 1px solid black;
 }
 .tb_head{
+    width: 300px;
     text-align: center;
     /* background-color: rgb(240, 236, 236); */
     border-bottom: 1px solid black;
+}
+
+.flex {
+    display: flex;
+}
+
+#sub {
+    float: right;
+    width: 120px;
+    height: 40px;
+    margin-bottom: 0;
+    color: var(--paragraph-color);
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+#sub:hover {
+    cursor: pointer;
 }
