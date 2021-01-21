@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/66c5b2aca7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <title>My Library</title>
 </head>
@@ -13,23 +14,36 @@
         <div class="grid-above flex">
             <div class="above-1">
                 <button id="add_btn" class="card-button" ><p>ADD BOOK</p></button>
-                <form class="form hid">
-                    <span id="details">Book Details</span>
+                <form class="form hid" novalidate>
+                    <div>
+                        <span id="details">Book Details</span>
+                        <span id="close">
+                            <i class="fas fa-times lg"></i>
+                        </span>
+                    </div>
                     <br>
-                    <input type="text" id="input_title" name="title" placeholder="Title">
-                    <br>                    
-                    <input type="text" id="input_author" placeholder="Author">
-                    <br>                    
-                    <input type="text" id="input_pages" placeholder="Pages">
-                    <br>                    
-                    <label for="read">read status </label>
+                    <div>
+                        <input type="text" id="input_title" name="title" placeholder="Title" required>
+                        <span id="title-valid" class="error"></span>
+                    </div>    
+                    <div>
+                        <input type="text" id="input_author" placeholder="Author" required>
+                        <span id="author-valid" class="error"></span>            
+                    </div>              
+                    <div>
+                        <input type="text" id="input_pages" placeholder="Pages" required>
+                        <span id="pages-valid" class="error"></span>
+    
+                    </div>
+                    <div>
+                        <label for="read">read status | </label>
+                        <label for="true">read</label>
+                        <input type="radio" name="read" id="read_true" value="true" checked="checked">
+                        <label for="false">not yet</label>
+                        <input type="radio" name="read" id="read_false" value="false">    
+                    </div>
                     <br>
-                    <label for="true">read</label>
-                    <input type="radio" name="read" id="read_true" value="true" checked="checked">
-                    <label for="false">not yet</label>
-                    <input type="radio" name="read" id="read_false" value="false">
-                    <br>
-                    <br>                
+                    <!-- <button id="sub" class="card-button" >SUBMIT</button> -->
                     <input id="sub" class="card-button" type="button" value="SUBMIT">
                 </form>
             </div>

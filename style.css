@@ -17,10 +17,20 @@
 :root {
     --main-color: #f3d2c1;
     --secondary-color: #8bd3dd;
+
     --headline-color: #001858;
     --paragraph-color: #172c66;
+
     --button-color: #f582ae;
+    --button2-color: #00ebc7;
+
     --stroke-color: #001858;
+
+    --alert-color: #d9376e;
+
+    --input-init: #ff8e3c;
+    --input-invalid: #d9376e;
+    --input-valid: #00ebc7;
 }
 
 body{
@@ -114,6 +124,16 @@ h1, p{
     height: 30px;
     margin-bottom: 10px;
     outline: none;
+    padding: 3px;
+    border: 1px solid var(--input-init);
+}
+
+.form input:invalid {
+    border: 1px solid var(--input-invalid);
+}
+
+.form input:valid {
+    border: 1px solid var(--input-valid);
 }
 
 .form input:nth-child(3) {
@@ -123,6 +143,18 @@ h1, p{
 #details {
     font-weight: 500;
     letter-spacing: 0.1em;
+}
+
+#close {
+    float: right;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+
+}
+
+#close:hover {
+    cursor: pointer;
 }
 
 #read_true,
@@ -171,8 +203,22 @@ th, td{
     color: var(--paragraph-color);
     letter-spacing: 0.1em;
     font-weight: bold;
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 1px #001858;
 }
 
 #sub:hover {
     cursor: pointer;
+    transition: 0.1s ease-in;
+    background-color: var(--button2-color);
+    transform: translate(0px, 0px);
+    box-shadow: 0px 0px 0px #001858;
+    border: 1px solid #001858;
+    color: #FFF;
+}
+
+.error {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--alert-color);
 }

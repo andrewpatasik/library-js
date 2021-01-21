@@ -3,11 +3,20 @@
 //function untuk mengambil input user kemudian menyimpan ke array
 
 const addBtn = document.querySelector('#add_btn')
-const submitFormBtn = document.querySelector('#sub')
-const form = document.querySelector('.form')
+const submitFormBtn = document.getElementById('sub')
+const form = document.getElementsByTagName('form')[0];
 const table = document.querySelector('#book_list');
 const tbHead = document.querySelector('#tb_head')
 const tBody = document.querySelector('tbody')
+const closeForm = document.getElementById('close');
+
+const inputTitle = document.getElementById('input_title');
+const inputAuthor = document.getElementById('input_author');
+const inputPages = document.getElementById('input_pages');
+
+const titleMessageError = document.getElementById('title-valid');
+const authorMessageError = document.getElementById('author-valid');
+const pagesMessageError = document.getElementById('pages-valid');
 
 let myLibrary = [
     {
@@ -104,6 +113,10 @@ function addBookToLibrary(){
     display(myLibrary)
 }
 
+closeForm.addEventListener('click', () => {
+    form.classList.add('hid');
+})
+
 //Object constructor
 function Book(title, author, pages, read){
     this.title = title;
@@ -120,9 +133,79 @@ addBtn.onclick = function(){
     document.querySelector('#input_title').focus();
 }
 
-submitFormBtn.onclick = function(){
-    addBookToLibrary()
-    form.classList.add('hid')            
-}
+// submitFormBtn.onclick = function(){
+//     addBookToLibrary()
+//     form.classList.add('hid')    
+        
+// }
+
+submitFormBtn.addEventListener('click', (event) => {
+    if (!inputTitle.validity.valid) {
+        showError(inputTitle);
+        event.preventDefault();
+    } else if (!inputAuthor.validity.valid) {
+        showError(inputAuthor);
+        event.preventDefault();
+    } else if (!inputPages.validity.valid) {
+        showError(inputPages);
+        event.preventDefault();
+    } else {
+        addBookToLibrary();
+        form.classList.add('hid');
+    }
+})
 
 display(myLibrary)
+
+
+inputTitle.addEventListener('input', () => {
+    if (inputTitle.validity.valid) {
+        titleMessageError.textContent = '';
+    } else {
+        showError(inputTitle);
+    }
+})
+
+inputAuthor.addEventListener('input', () => {
+    if (inputAuthor.validity.valid) {
+        authorMessageError.textContent = '';
+    } else {
+        showError(inputAuthor);
+    }
+})
+
+inputPages.addEventListener('input', () => {
+    if (inputPages.validity.valid) {
+        pagesMessageError.textContent = '';
+    } else {
+        showError(inputPages);
+    }
+})
+
+// inputTitle.addEventListener('input', () => {
+//     if (inputTitle.validity.valid) {
+//         titleMessageError.textContent = '';
+//     } else {
+//         showError(inputTitle);
+//     }
+// })
+
+function showError(el) {
+    switch (el) {
+        case inputTitle:
+            if (inputTitle.validity.valueMissing) {
+                titleMessageError.textContent = 'title is required';
+            }
+            break;
+        case inputAuthor:
+            if (inputAuthor.validity.valueMissing) {
+                authorMessageError.textContent = 'author is required';
+            }
+            break;
+        case inputPages:
+            if (inputPages.validity.valueMissing) {
+                pagesMessageError.textContent = 'pages is required';
+            }
+            break;
+    }
+}
